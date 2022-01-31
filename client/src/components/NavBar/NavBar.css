@@ -1,0 +1,81 @@
+.navbar{
+    background-color: #2e2d2e;
+    border-bottom: 1px solid #2e2d2e;
+    margin-bottom: 1vh;
+}
+
+.navbar .container .navbar-brand{
+    font-size: 1.8rem;
+    color: #c67cf1;
+    font-weight:bolder;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.navbar .container .navbar-collapse form input{
+    border: 1px solid #c67cf1;
+    background-color: #2e2d2e;
+    width: 18vw;
+    color: #ffffff;
+    margin-left: 2vw;
+}
+
+.navbar .container .navbar-collapse form input:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar .container .navbar-collapse form button{
+    background-color: #9749c4;
+}
+
+.navbar .container .navbar-collapse form button:hover{
+    background-color: #9a33d6;
+}
+
+.navbar .container .navbar-collapse .new-post{
+    background-color: #c67cf1;
+    border-radius: 8px;
+    margin-right: 1vw;
+}
+
+.navbar .container .navbar-collapse .new-post:hover{
+    background-color: #9749c4;
+}
+
+.navbar .container .navbar-collapse .user-icon{
+    background-color: #2e2d2e;
+    border: 2px solid #a6a5a7;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar .container .navbar-collapse .user-icon:hover{
+    transform: scale(1.05);
+}
+
+.navbar .container .navbar-collapse .dropdown-toggle::after {
+    display: none;
+}
+
+.navbar .container .navbar-collapse .login{
+    background-color: #c67cf1;
+    width: 7vw;
+    border-radius: 8px;
+    margin-right: 1vw;
+}
+
+.navbar .container .navbar-collapse .login:hover{
+    background-color: #9749c4;
+}
+
+.navbar .container .navbar-collapse .signup{
+    background-color: #c67cf1;
+    width: 7vw;
+    border-radius: 8px;
+    margin-right: 1vw;
+}
+
+.navbar .container .navbar-collapse .signup:hover{
+    background-color: #9749c4;
+}

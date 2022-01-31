@@ -1,0 +1,43 @@
+.login-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 34px);
+}
+
+.login-container .card{
+    width: 45rem;
+    padding: 1rem 0.5rem;
+    border: 1px solid #434244;
+    border-radius: 10px;
+}
+
+.login-container .card .card-title{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #343335;
+    text-align: center;
+}
+
+.login-container .card form input{
+    width: 90%;
+}
+
+.login-container .card form button{
+    background-color: #c67cf1;
+    width: 10vw;
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: #c67cf1;
+}
+
+.login-container .card .error p{
+    color: #c93c23;
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 2vh;
+}

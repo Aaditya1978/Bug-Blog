@@ -1,0 +1,107 @@
+.createpost-container{
+    min-height: calc(100vh - 34px);
+}
+
+.createpost-container .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8vh;
+    padding-bottom: 12vh;
+}
+
+.createpost-container .container .card{
+    padding: 1rem;
+    border-radius: 10px;
+    width: 55rem;
+}
+
+.createpost-container .container .card .heading{
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* input type file */
+.createpost-container .container .card form label{
+    font-size: 1.3rem;
+    font-weight:700;
+}
+
+.createpost-container .container .card form .img-preview{
+    width: 60%;
+    height: 30vh;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.createpost-container .container .card form .img-preview img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.createpost-container .container .card form .remove-image{
+    background: #f44336;
+    color: #fff;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: medium;
+    font-weight: bold;
+    width: 10vw;
+}
+
+.createpost-container .container .card form .remove-image:hover{
+    background: #c9291e;
+}
+
+.createpost-container .container .card form input[type="file"]{
+    width: 30%;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+}
+
+.createpost-container .container .card form input[type="text"]{
+    width: 80%;
+    color: #000;
+    font-size: 2rem;
+    font-weight: bolder;
+    border: none;
+    margin-bottom: 3rem;
+}
+
+.createpost-container .container .card form input[type="text"]:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.createpost-container .container .card form input[type="text"]::placeholder{
+    color: #000;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.createpost-container .container .card form .ck-editor__editable {
+    min-height: 25vh;
+}
+
+.createpost-container .container .card form .submit{
+    width:9rem;
+    border-radius: 7px;
+    border: none;
+    padding: 0.3rem;
+    background-color: #a549da;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.createpost-container .container .card .error{
+    color: #f44336;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
