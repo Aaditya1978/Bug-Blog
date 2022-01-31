@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Form, Card, Button, Spinner } from "react-bootstrap";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import ClassicEditor from "@aaditya1978/ckeditor5-build-classic";
 import axios from "axios";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
