@@ -5,6 +5,19 @@
     margin-bottom: 30px;
 }
 
+.blog-container .loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.blog-container .loader svg{
+    width: 200px;
+    height: 200px;
+}  
+
 .blog-container .utilities{
     width: 20%;
     display: flex;

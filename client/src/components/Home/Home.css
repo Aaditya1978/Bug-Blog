@@ -22,6 +22,19 @@
   margin-bottom: 30px;
 }
 
+.home-container .loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.home-container .loader svg{
+  width: 200px;
+  height: 200px;
+}
+
 .home-container .blog-card{
   margin-bottom: 30px;
   width: 40rem;
