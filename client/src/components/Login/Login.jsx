@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Container, Card, Form, Button } from "react-bootstrap";
+import { Container, Card, Form, Button, Spinner } from "react-bootstrap";
 import axios from "axios";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
@@ -14,7 +14,8 @@ export default function Login() {
   const [errorMsg, setErrorMsg] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
- 
+  const [submitting, setSubmitting] = useState(false);
+
   useEffect(() => {
     if (localStorage.getItem("token")) {
       navigate("/");
@@ -24,8 +25,10 @@ export default function Login() {
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     event.preventDefault();
+    setSubmitting(true);
     if (form.checkValidity() === false) {
       event.stopPropagation();
+      setSubmitting(false);
       return;
     }
 
@@ -36,16 +39,17 @@ export default function Login() {
       })
       .then((res) => {
         localStorage.setItem("token", res.data.token);
+        setSubmitting(false);
         navigate("/");
       })
       .catch((err) => {
+        setSubmitting(false);
         setError(true);
         setErrorMsg(err.response.data.error);
         setTimeout(() => {
           setError(false);
           setErrorMsg("");
-        }
-        , 3000);
+        }, 3000);
       });
 
     setValidated(true);
@@ -87,8 +91,16 @@ export default function Login() {
                 </Form.Control.Feedback>
               </Form.Group>
               <div className="d-flex justify-content-center">
-                <Button variant="primary" type="submit">
-                  Submit
+                <Button
+                  variant="primary"
+                  type="submit"
+                  {...(submitting ? { disabled: true } : {})}
+                >
+                  {submitting ? (
+                    <Spinner as="span" animation="border" role="status" />
+                  ) : (
+                    "Submit"
+                  )}
                 </Button>
               </div>
             </Form>

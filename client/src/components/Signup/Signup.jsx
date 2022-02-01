@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Container, Card, Form, Button } from "react-bootstrap";
+import { Container, Card, Form, Button, Spinner } from "react-bootstrap";
 import axios from "axios";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
@@ -16,6 +16,7 @@ export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -25,6 +26,7 @@ export default function Signup() {
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
+    setSubmitting(true);
     event.preventDefault();
     if (form.checkValidity() === false) {
       event.stopPropagation();
@@ -38,6 +40,7 @@ export default function Signup() {
         setError(false);
         setErrorMsg("");
       }, 3000);
+      setSubmitting(false);
       event.stopPropagation();
       return;
     }
@@ -49,16 +52,17 @@ export default function Signup() {
         password,
       })
       .then((res) => {
+        setSubmitting(false);
         navigate("/login");
       })
       .catch((err) => {
+        setSubmitting(false);
         setError(true);
         setErrorMsg(err.response.data.error);
         setTimeout(() => {
           setError(false);
           setErrorMsg("");
-        }
-        , 3000);
+        }, 3000);
       });
 
     setValidated(true);
@@ -126,8 +130,16 @@ export default function Signup() {
                 </Form.Control.Feedback>
               </Form.Group>
               <div className="d-flex justify-content-center">
-                <Button variant="primary" type="submit">
-                  Submit
+                <Button
+                  variant="primary"
+                  type="submit"
+                  {...(submitting ? { disabled: true } : {})}
+                >
+                  {submitting ? (
+                    <Spinner as="span" animation="border" role="status" />
+                  ) : (
+                    "Submit"
+                  )}
                 </Button>
               </div>
             </Form>
