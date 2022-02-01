@@ -10,6 +10,19 @@
   color: #8b39bb;
 }
 
+.search-container .loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.search-container .loader svg{
+  width: 200px;
+  height: 200px;
+}
+
 .search-container .container {
   padding-top: 3vh;
   display: flex;

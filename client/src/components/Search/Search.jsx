@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Container, Card } from "react-bootstrap";
 import { AiOutlineHeart } from "react-icons/ai";
 import { FaRegComment } from "react-icons/fa";
+import { BallTriangle } from "react-loader-spinner";
 import axios from "axios";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
@@ -13,6 +14,7 @@ export default function Search() {
 
   const { query } = useParams();
 
+  const [loading, setLoading] = useState(true);
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
@@ -24,6 +26,9 @@ export default function Search() {
       .catch((err) => {
         console.log(err);
       });
+    setInterval(() => {
+      setLoading(false);
+    }, 1000);
   }, [query]);
 
   const handlePost = (id) => {
@@ -35,6 +40,15 @@ export default function Search() {
       <NavBar />
       <div className="search-container">
         <h1 className="main-heading">Results For Your Search</h1>
+        { loading ? (
+        <div className="loader">
+          <BallTriangle
+            radius="4px"
+            color="#8b39bb"
+            ariaLabel="loading-indicator"
+          />
+        </div>
+        ) : (
         <Container>
           {blogs.length > 0 ? (
             blogs.reverse().map((blog) => {
@@ -73,6 +87,7 @@ export default function Search() {
             </>
           )}
         </Container>
+        )}
       </div>
       <Footer />
     </>
