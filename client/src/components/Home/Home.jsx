@@ -20,13 +20,16 @@ export default function Home() {
       .get(`${process.env.REACT_APP_BASE_URL}/api/user/posts`)
       .then((res) => {
         setBlogs(res.data.blogs);
+        setInterval(() => {
+          setLoading(false);
+        }, 1000);
       })
       .catch((err) => {
         console.log(err);
+        setInterval(() => {
+          setLoading(false);
+        }, 1000);
       });
-    setInterval(() => {
-      setLoading(false);
-    }, 1000);
   }, []);
 
   const handlePost = (id) => {

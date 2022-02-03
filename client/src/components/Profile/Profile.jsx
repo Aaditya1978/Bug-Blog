@@ -31,16 +31,22 @@ export default function Profile() {
           setEmail(res.data.email);
           setBlogs(res.data.blogs);
           setLikedBlogs(res.data.likedBlogs);
+          setInterval(() => {
+            setLoading(false);
+          }, 1000);
         })
         .catch((err) => {
+          setInterval(() => {
+            setLoading(false);
+          }, 1000);
           navigate("/login");
         });
     } else {
+      setInterval(() => {
+        setLoading(false);
+      }, 1000);
       navigate("/login");
     }
-    setInterval(() => {
-      setLoading(false);
-    }, 1000);
   }, [navigate, setName, setEmail, setBlogs, setLikedBlogs]);
 
   const handlePost = (id) => {

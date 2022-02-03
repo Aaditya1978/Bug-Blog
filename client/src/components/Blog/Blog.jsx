@@ -57,13 +57,16 @@ export default function Blog() {
             }
           });
         }
+        setInterval(() => {
+          setLoading(false);
+        }, 1000);
       })
       .catch((err) => {
+        setInterval(() => {
+          setLoading(false);
+        }, 1000);
         console.log(err);
       });
-    setInterval(() => {
-      setLoading(false);
-    }, 1000);
   }, [id, loggedIn, userId]);
 
   const handleLike = (id) => {
