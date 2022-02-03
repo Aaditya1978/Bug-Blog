@@ -18,6 +18,7 @@ export default function Search() {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
+    setLoading(true);
     axios
       .get(`${process.env.REACT_APP_BASE_URL}/api/user/search/${query}`)
       .then((res) => {
