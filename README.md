@@ -46,7 +46,7 @@ https://bugblog.netlify.app/
 
 Fronted - Netlify
 
-Backend - Heroku
+Backend - Render
 
   
 ## Run Locally
