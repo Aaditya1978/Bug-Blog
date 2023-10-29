@@ -5,6 +5,7 @@ const multer = require("multer");
 const cloudinary = require("cloudinary").v2;
 const User = require("../models/user.model");
 const Blog = require("../models/blog.model");
+const sanitizeHtml = require('sanitize-html');
 
 const { CLOUD_NAME, API_KEY, API_SECRET } = process.env;
 
@@ -129,6 +130,9 @@ Router.post("/post/comment/:id", async (req, res) => {
 Router.post("/create", upload.single("image"), async (req, res) => {
   const { title, content, date, token } = req.body;
 
+  const sanitizedTitle = sanitizeHtml(title);
+  const sanitizedContent = sanitizeHtml(content);
+
   if (req.file) {
     cloudinary.uploader.upload(
       req.file.path,
@@ -148,8 +152,8 @@ Router.post("/create", upload.single("image"), async (req, res) => {
             return res.status(404).send({ error: "User not found" });
           }
           const blog = new Blog({
-            title,
-            content,
+            title: sanitizedTitle,
+            content: sanitizedContent,
             image,
             cloudinaryId,
             author: user.name,
