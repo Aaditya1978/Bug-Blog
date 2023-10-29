@@ -10,6 +10,7 @@ import axios from "axios";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import "./Blog.css";
+import DOMPurify from 'dompurify';
 
 export default function Blog() {
   const { id } = useParams();
@@ -180,7 +181,7 @@ export default function Blog() {
                   <h1>{blog.title}</h1>
                   <div
                     className="blog-content"
-                    dangerouslySetInnerHTML={{ __html: blog.content }}
+                    dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.content) }}
                   ></div>
                 </Card.Body>
               </Card>
