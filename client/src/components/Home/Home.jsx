@@ -8,6 +8,7 @@ import axios from "axios";
 import NavBar from "../NavBar/NavBar";
 import Pagination from "./Pagination/Pagination";
 import "./Home.css";
+import Footer from "../Footer/Footer";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -106,6 +107,7 @@ export default function Home() {
           onPageChange={handlePageChange}
         />
       </div>
+      <Footer />
     </>
   );
 }

@@ -8,6 +8,7 @@ import { BallTriangle } from "react-loader-spinner";
 import axios from "axios";
 import NavBar from "../NavBar/NavBar";
 import "./Profile.css";
+import Footer from "../Footer/Footer";
 
 export default function Profile() {
   const navigate = useNavigate();
@@ -220,6 +221,7 @@ export default function Profile() {
           </div>
         )}
       </div>
+      <Footer />
     </>
   );
 }

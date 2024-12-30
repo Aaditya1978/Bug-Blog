@@ -8,6 +8,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { BallTriangle } from "react-loader-spinner";
 import axios from "axios";
 import NavBar from "../NavBar/NavBar";
+import Footer from "../Footer/Footer";
 import "./Blog.css";
 
 export default function Blog() {
@@ -261,6 +262,7 @@ export default function Blog() {
           </>
         )}
       </div>
+      <Footer />
     </>
   );
 }

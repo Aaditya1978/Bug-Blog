@@ -1,8 +1,11 @@
 .home-container {
   min-height: calc(100vh - 34px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.home-container .main-heading{
+.home-container .main-heading {
   font-size: 2.5rem;
   font-weight: 700;
   margin-left: 4rem;
@@ -10,7 +13,7 @@
   color: #8b39bb;
 }
 
-.home-container .container{
+.home-container .container {
   padding-top: 3vh;
   display: flex;
   flex-direction: column;
@@ -22,7 +25,7 @@
   margin-bottom: 30px;
 }
 
-.home-container .loader{
+.home-container .loader {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,46 +33,46 @@
   height: 100%;
 }
 
-.home-container .loader svg{
+.home-container .loader svg {
   width: 200px;
   height: 200px;
 }
 
-.home-container .blog-card{
+.home-container .blog-card {
   margin-bottom: 30px;
   width: 40rem;
   border-radius: 12px;
   cursor: pointer;
 }
 
-.home-container .blog-card .card-img-top{
+.home-container .blog-card .card-img-top {
   height: 30vh;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 
-.home-container .blog-card .card-body{
+.home-container .blog-card .card-body {
   padding: 0.5rem;
 }
 
-.home-container .blog-card .card-body h1{
+.home-container .blog-card .card-body h1 {
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
-.home-container .blog-card .card-body h1:hover{
+.home-container .blog-card .card-body h1:hover {
   color: #8b39bb;
 }
 
-.home-container .blog-card .card-body .blog-info{
+.home-container .blog-card .card-body .blog-info {
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 0.1rem;
   color: #181717;
 }
 
-.home-container .blog-card .card-body .blog-items{
+.home-container .blog-card .card-body .blog-items {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -79,8 +82,15 @@
   margin-top: 1rem;
 }
 
-.home-container .blog-card .card-body .blog-items span{
+.home-container .blog-card .card-body .blog-items span {
   padding-right: 1.7rem;
+}
+
+.home-container .pagination {
+  margin-top: auto; 
+  background-color: #fff; 
+  border-top: 1px solid #ddd;
+  padding: 10px 0;
 }
 
 @media (max-width: 992px) {
@@ -88,10 +98,14 @@
     flex-direction: column;
   }
 
-  .home-container .blog-card{
+  .home-container .blog-card {
     margin-bottom: 30px;
     width: 20rem;
     border-radius: 12px;
     cursor: pointer;
+  }
+
+  .home-container .pagination {
+    margin-top: 20px;
   }
 }

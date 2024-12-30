@@ -6,6 +6,7 @@ import ClassicEditor from "@aaditya1978/ckeditor5-build-classic";
 import axios from "axios";
 import NavBar from "../NavBar/NavBar";
 import "./EditPost.css";
+import Footer from "../Footer/Footer";
 
 export default function EditPost() {
   const navigate = useNavigate();
@@ -155,6 +156,7 @@ export default function EditPost() {
           </Card>
         </Container>
       </div>
+      <Footer />
     </>
   );
 }
