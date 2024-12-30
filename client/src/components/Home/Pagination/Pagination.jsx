@@ -2,17 +2,32 @@ import React from "react";
 import "./Pagination.css";
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
-  // Generate page numbers based on totalPages
   console.log('Current Page:', currentPage);
   console.log('Total Pages:', totalPages);
-  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+
+  const pageNumbers = [];
+  const pageLimit = 5; // Number of page buttons to show at a time
+
+  // Calculate start and end page
+  let startPage = Math.max(currentPage - Math.floor(pageLimit / 2), 1);
+  let endPage = startPage + pageLimit - 1;
+
+  // Adjust if endPage exceeds totalPages
+  if (endPage > totalPages) {
+    endPage = totalPages;
+    startPage = Math.max(endPage - pageLimit + 1, 1);
+  }
+
+  for (let i = startPage; i <= endPage; i++) {
+    pageNumbers.push(i);
+  }
 
   return (
     <div className="pagination">
       {/* Prev Button */}
       <button
         onClick={() => onPageChange(currentPage - 1)}
-        disabled={currentPage === 1} // Disable if on the first page
+        disabled={currentPage === 1}
         className="pagination-button"
       >
         Prev
@@ -34,7 +49,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
       {/* Next Button */}
       <button
         onClick={() => onPageChange(currentPage + 1)}
-        disabled={currentPage === totalPages} // Disable if on the last page
+        disabled={currentPage === totalPages}
         className="pagination-button"
       >
         Next
