@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { Container, Card, Form, Button, Spinner } from "react-bootstrap";
 import axios from "axios";
 import NavBar from "../NavBar/NavBar";
-import Footer from "../Footer/Footer";
 import "./Login.css";
+import Footer from "../Footer/Footer";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -108,7 +108,6 @@ export default function Login() {
           </Card.Body>
         </Card>
       </Container>
-
       <Footer />
     </>
   );
