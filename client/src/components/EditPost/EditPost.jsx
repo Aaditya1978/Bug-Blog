@@ -5,7 +5,6 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@aaditya1978/ckeditor5-build-classic";
 import axios from "axios";
 import NavBar from "../NavBar/NavBar";
-import Footer from "../Footer/Footer";
 import "./EditPost.css";
 
 export default function EditPost() {
@@ -156,7 +155,6 @@ export default function EditPost() {
           </Card>
         </Container>
       </div>
-      <Footer />
     </>
   );
 }

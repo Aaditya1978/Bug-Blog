@@ -7,7 +7,6 @@ import { FaRegComment } from "react-icons/fa";
 import { BallTriangle } from "react-loader-spinner";
 import axios from "axios";
 import NavBar from "../NavBar/NavBar";
-import Footer from "../Footer/Footer";
 import "./Profile.css";
 
 export default function Profile() {
@@ -221,7 +220,6 @@ export default function Profile() {
           </div>
         )}
       </div>
-      <Footer />
     </>
   );
 }

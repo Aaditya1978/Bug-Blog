@@ -60,7 +60,7 @@ export default function NavBar() {
               navigate("/");
             }}
           >
-            BugBlog
+            Anirudh's BlogSite
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse>

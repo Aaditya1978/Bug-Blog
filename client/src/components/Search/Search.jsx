@@ -6,7 +6,6 @@ import { FaRegComment } from "react-icons/fa";
 import { BallTriangle } from "react-loader-spinner";
 import axios from "axios";
 import NavBar from "../NavBar/NavBar";
-import Footer from "../Footer/Footer";
 import "./Search.css";
 
 export default function Search() {
@@ -93,7 +92,6 @@ export default function Search() {
         </Container>
         )}
       </div>
-      <Footer />
     </>
   );
 }

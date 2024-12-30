@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { Container, Card, Form, Button, Spinner } from "react-bootstrap";
 import axios from "axios";
 import NavBar from "../NavBar/NavBar";
-import Footer from "../Footer/Footer";
 import "./Signup.css";
 
 export default function Signup() {
@@ -147,8 +146,6 @@ export default function Signup() {
           </Card.Body>
         </Card>
       </Container>
-
-      <Footer />
     </>
   );
 }

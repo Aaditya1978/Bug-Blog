@@ -8,11 +8,7 @@ const authRoute = require("./routes/auth");
 const app = express();
 app.use(express.json());
 app.use(cors());
-
-const dbUrl =
-  "mongodb+srv://bugblog:" +
-  process.env.MONGO_PASSWORD +
-  "@cluster0.uekp5.mongodb.net/bugblog";
+const dbUrl = "mongodb+srv://dbanirudh:dbanirudh%40123@cluster0.17gjm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,

@@ -1,11 +1,13 @@
 .blog-container {
     min-height: calc(100vh - 34px);
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     padding-top: 2vh;
     margin-bottom: 30px;
 }
 
-.blog-container .loader{
+.blog-container .loader {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,132 +15,138 @@
     height: 100%;
 }
 
-.blog-container .loader svg{
-    width: 200px;
-    height: 200px;
-}  
+.blog-container .loader svg {
+    width: 150px;
+    height: 150px;
+}
 
-.blog-container .utilities{
+.blog-container .utilities {
     width: 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1.5rem;
 }
 
-.blog-container .utilities .account-alert{
+.blog-container .utilities .account-alert {
     font-size: 1.2rem;
     font-weight: 500;
-    margin-left: 2rem;
     text-align: center;
 }
 
-.blog-container .utilities .utility-item{
-    margin-bottom: 2rem;
-    font-size: 1.6rem;
+.blog-container .utilities .utility-item {
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
     cursor: pointer;
+    transition: color 0.3s;
 }
 
-.blog-container .utilities .like:hover{
-    color: #f33838;
+.blog-container .utilities .like:hover {
+    color: #ff6b6b;
 }
 
-.blog-container .utilities .liked{
-    color: #f33838;
+.blog-container .utilities .liked {
+    color: #ff6b6b;
 }
 
-.blog-container .utilities .comment:hover{
-    color: #565cb8;
+.blog-container .utilities .comment:hover {
+    color: #4d96ff;
 }
 
-.blog-container .blog{
+.blog-container .blog {
     align-self: center;
-    width: 85%;
+    width: 75%;
 }
 
-.blog-container .blog .card{
-    width: 80%;
+.blog-container .blog .card {
+    width: 90%;
     border-radius: 12px;
-    padding: 2rem 3rem;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.blog-container .blog .card .card-body{
-    padding: 0.5rem;
+.blog-container .blog .card .card-body {
+    padding: 0.8rem;
 }
 
-.blog-container .blog .card .card-body h1{
-    font-size: 2.2rem;
+.blog-container .blog .card .card-body h1 {
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    margin-top: 0.5rem;
 }
 
-.comment-box form button{
-    width: 30%;
+.comment-box form button {
+    width: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #8b39bb;
+    background-color: #5e60ce;
     color: #fff;
     border-radius: 7px;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    transition: background-color 0.3s;
 }
 
-.comment-box form button:hover{
-    background-color: #7c24af;
+.comment-box form button:hover {
+    background-color: #4b4dbf;
 }
 
-.comment-container .comment{
-    padding: 1rem 1rem;
+.comment-container .comment {
+    padding: 1rem;
     border-radius: 7px;
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.19);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
 }
 
-.comment-container .comment .comment-author{
+.comment-container .comment .comment-author {
     font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.3rem;
 }
 
-.comment-container .comment .comment-date{
+.comment-container .comment .comment-date {
     font-size: 0.8rem;
     font-weight: 400;
-    color: #181717;
+    color: #5a5a5a;
     margin-bottom: 0.5rem;
 }
 
-.comment-container .comment .comment-content{
-    font-size: 1.2rem;
+.comment-container .comment .comment-content {
+    font-size: 1rem;
     font-weight: 500;
-    color: #181717;
+    color: #2d2d2d;
 }
 
-.copy-link .copy-link-container{
+.copy-link .copy-link-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 0.5rem;
 }
 
-.copy-link .copy-link-container .url{
+.copy-link .copy-link-container .url {
     font-size: 1rem;
     font-weight: 500;
-    color: #d64531;
+    color: #ff884b;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.copy-link .copy-link-container .copy{
+.copy-link .copy-link-container .copy {
     cursor: pointer;
-    transition: 0.3s;
+    transition: transform 0.3s, color 0.3s;
 }
 
-.copy-link .copy-link-container .copy:hover{
-    color: #f33838;
+.copy-link .copy-link-container .copy:hover {
+    color: #ff6b6b;
     transform: scale(1.1);
 }
 
-.copy-link .copied-text{
+.copy-link .copied-text {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -146,8 +154,8 @@
     font-weight: 500;
 }
 
-.copy-link .copied-text span{
+.copy-link .copied-text span {
     border-radius: 7px;
-    padding: 0.5rem 1rem;
-    background-color: #d4b9e4;
+    padding: 0.3rem 0.8rem;
+    background-color: #cce7ff;
 }

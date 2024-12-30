@@ -6,7 +6,7 @@ import { FaRegComment } from "react-icons/fa";
 import { BallTriangle } from "react-loader-spinner";
 import axios from "axios";
 import NavBar from "../NavBar/NavBar";
-import Footer from "../Footer/Footer";
+import Pagination from "./Pagination/Pagination";
 import "./Home.css";
 
 export default function Home() {
@@ -14,26 +14,34 @@ export default function Home() {
 
   const [loading, setLoading] = useState(true);
   const [blogs, setBlogs] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
+    // Fetching the blog posts
     axios
       .get(`${process.env.REACT_APP_BASE_URL}/api/user/posts`)
       .then((res) => {
+        // Log the response to check the structure
+        console.log("API Response:", res.data);
         setBlogs(res.data.blogs);
-        setInterval(() => {
-          setLoading(false);
-        }, 1000);
+        const totalBlogs = res.data.blogs.length;
+        console.log("Total Blogs:", totalBlogs);
+        setTotalPages(Math.ceil(totalBlogs / 3)); // Set total pages based on 3 blogs per page
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
-        setInterval(() => {
-          setLoading(false);
-        }, 1000);
+        setLoading(false);
       });
   }, []);
 
   const handlePost = (id) => {
     navigate(`/blog/${id}`);
+  };
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
   };
 
   return (
@@ -52,7 +60,8 @@ export default function Home() {
         ) : (
           <Container>
             {blogs.length > 0 ? (
-              blogs.reverse().map((blog) => {
+              // Slice the blogs to display 3 per page
+              blogs.slice((currentPage - 1) * 3, currentPage * 3).map((blog) => {
                 return (
                   <Card
                     className="blog-card"
@@ -84,14 +93,19 @@ export default function Home() {
               })
             ) : (
               <>
-                <h1>No Blogs Avaliable</h1>
+                <h1>No Blogs Available</h1>
                 <p>Write Your own Blog !!</p>
               </>
             )}
           </Container>
         )}
+        {/* Pagination Component */}
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
       </div>
-      <Footer />
     </>
   );
 }
