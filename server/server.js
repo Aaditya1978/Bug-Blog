@@ -8,7 +8,7 @@ const authRoute = require("./routes/auth");
 const app = express();
 app.use(express.json());
 app.use(cors());
-const dbUrl = "mongodb+srv://dbanirudh:dbanirudh%40123@cluster0.17gjm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const dbUrl = "PASTE_HERE" # paste your URL here
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
